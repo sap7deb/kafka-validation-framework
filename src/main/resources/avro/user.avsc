@@ -1,0 +1,10 @@
+{
+     "type": "record",
+     "namespace": "com.app",
+     "name": "User",
+     "version": "1",
+     "fields": [
+       { "name": "first_name", "type": ["null","string"], "doc": "First Name of User" },
+       { "name": "last_name", "type": ["null","string"], "doc": "Last Name of User" }
+     ]
+}

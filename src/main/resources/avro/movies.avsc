@@ -1,0 +1,10 @@
+{
+     "type": "record",
+     "namespace": "com.app",
+     "name": "Movie",
+     "version": "1",
+     "fields": [
+       { "name": "movie_name", "type": ["null","string"], "doc": "Name of Movie" },
+       { "name": "genre", "type": ["null","string"], "doc": "Genre of Movie" }
+     ]
+}
