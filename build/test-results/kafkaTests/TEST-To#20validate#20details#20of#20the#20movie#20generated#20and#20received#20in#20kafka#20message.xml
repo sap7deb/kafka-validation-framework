@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="To validate details of the movie generated and received in kafka message" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-02T12:23:07" hostname="Saptarshis-MacBook-Pro-2.local" time="2.311">
+  <properties/>
+  <testcase name="Should validate details of the movie" classname="To validate details of the movie generated and received in kafka message" time="2.311"/>
+  <system-out><![CDATA[
+@Test
+Scenario: Should validate details of the movie                                                      ?[90m# src/test/resources/features/ValidateMovie.feature:4?[0m
+  ?[32mGiven ?[0m?[32muser should generate a kafka message with movie name as ?[0m?[32m?[1m"Batman"?[0m?[32m and genre as ?[0m?[32m?[1m"Sci-Fi"?[0m      ?[90m# stepDefinitions.GivenSteps.generateKafkaMessage(java.lang.String,java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser triggers the kafka message for topic ?[0m?[32m?[1m"movies"?[0m                                           ?[90m# stepDefinitions.WhenSteps.userTriggersTheKafkaMessageForTopic(java.lang.String)?[0m
+offset = 5, key = 00000, topic = movies, value = {"movie_name": "Batman", "genre": "Sci-Fi"}
+  ?[32mThen ?[0m?[32muser consumes kafka message from topic ?[0m?[32m?[1m"movies"?[0m?[32m and consumer group ?[0m?[32m?[1m"CG.movies"?[0m?[32m and validates?[0m ?[90m# stepDefinitions.ThenSteps.userConsumesKafkaMessageFromTopicAndConsumerGroupAndValidates(java.lang.String,java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

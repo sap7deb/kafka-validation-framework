@@ -1,10 +1,6 @@
-Consumer/KafkaMessageConsumer.java
- Consumer.KafkaMessageConsumer
 avro/com/app/User.java
  com.app.User
  com.app.User$Builder
-producer/KafkaMessageProducer.java
- producer.KafkaMessageProducer
 avro/com/app/Movie.java
  com.app.Movie
  com.app.Movie$Builder

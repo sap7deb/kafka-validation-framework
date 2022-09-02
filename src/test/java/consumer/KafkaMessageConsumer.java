@@ -1,4 +1,4 @@
-package Consumer;
+package consumer;
 
 import com.app.Movie;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;

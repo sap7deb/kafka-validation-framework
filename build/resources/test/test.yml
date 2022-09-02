@@ -1,0 +1,6 @@
+producer:
+  bootstrap: 127.0.0.1:9092
+  schemaRegistry: http://localhost:8081
+consumer:
+  bootstrap: 127.0.0.1:9092
+  schemaRegistry: http://localhost:8081
