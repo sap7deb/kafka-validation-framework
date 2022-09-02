@@ -10,7 +10,6 @@ jobs:
       - name: Install docker
         run: |
           brew install docker docker-machine docker-compose
-          sudo docker –-version
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
