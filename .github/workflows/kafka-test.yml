@@ -31,4 +31,5 @@ jobs:
         run: ./gradlew kafkaTests
 
       - name: Stop docker-compose
+        if: always()
         run: docker-compose down
