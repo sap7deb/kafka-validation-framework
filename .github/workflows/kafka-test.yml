@@ -17,13 +17,18 @@ jobs:
           java-version: 11
 
       - name: Start containers
-        run: docker-compose -f "docker-compose.yml" up -d --build
+        run: |
+          docker-compose -f "docker-compose.yml" up -d --build
+          docker-compose ps
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
       - name: Execute Gradle build
         run: ./gradlew build
+
+      - name: Run Tests
+        run: ./gradlew kafkaTests
 
       - name: Stop docker-compose
         run: docker-compose down
