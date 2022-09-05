@@ -27,7 +27,7 @@ public class ThenSteps extends KafkaConstants {
         while (true) {
             ConsumerRecords<String, Movie> consumerRecord = movieConsumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, Movie> record : consumerRecord) {
-                System.out.printf("offset = %d, key = %s, topic = %s, value = %s%n", record.offset(), record.key(), record.topic(), record.value());
+                log.info("offset = %d, key = %s, topic = %s, value = %s%n", record.offset(), record.key(), record.topic(), record.value());
                 if (record.value() != null) {
                     Assert.assertEquals(movie, record.value());
                     status = true;
