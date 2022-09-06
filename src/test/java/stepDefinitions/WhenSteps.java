@@ -13,11 +13,11 @@ import java.io.IOException;
 @Slf4j
 public class WhenSteps extends KafkaConstants {
 
-    @When("user triggers the kafka message for topic {string}")
-    public void userTriggersTheKafkaMessageForTopic(String topicName) throws IOException {
+    @When("user triggers the kafka message for topic {string} on key {string}")
+    public void userTriggersTheKafkaMessageForTopic(String topicName, String key) throws IOException {
         movieProducer = new KafkaProducer<>(KafkaConfigs.producerConfigs());
         ProducerRecord<String, Movie> producerRecord =
-                new ProducerRecord<String, Movie>(topicName, 0, "00000", movie);
+                new ProducerRecord<String, Movie>(topicName, 0, key, movie);
         movieProducer.send(producerRecord, (metadata, exception) -> {
             if (exception == null) {
                 log.info("Successfully published message");

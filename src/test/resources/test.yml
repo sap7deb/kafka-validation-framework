@@ -1,6 +1,6 @@
 producer:
-  bootstrap: 172.17.0.1:9092
-  schemaRegistry: http://172.17.0.1:8081
+  bootstrap: 172.18.0.1:9092
+  schemaRegistry: http://172.18.0.1:8081
 consumer:
-  bootstrap: 172.17.0.1:9092
-  schemaRegistry: http://172.17.0.1:8081
+  bootstrap: 172.18.0.1:9092
+  schemaRegistry: http://172.18.0.1:8081

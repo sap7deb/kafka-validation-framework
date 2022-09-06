@@ -16,7 +16,6 @@ public class KafkaMessageProducer {
 
     public static void main(String[] args) {
 
-
         bootstrapServer = "127.0.0.1:9092";
         schemaRegistry = "http://127.0.0.1:8081";
         topic = "movies";
@@ -32,8 +31,10 @@ public class KafkaMessageProducer {
         movie.setGenre("Fiction");
 
         KafkaProducer<String, Movie> kafkaProducer = new KafkaProducer<String, Movie>(properties);
+
         ProducerRecord<String, Movie> producerRecord =
-                new ProducerRecord<String, Movie>(topic, 0, "00000", movie);
+                new ProducerRecord<String, Movie>(topic, 0, "Test", movie);
+
         kafkaProducer.send(producerRecord, (metadata, exception) -> {
             if (exception == null) {
                 log.info("Message was produced and published to Kafka topic: {}", topic);
@@ -42,6 +43,5 @@ public class KafkaMessageProducer {
             }
         });
         kafkaProducer.close();
-
     }
 }

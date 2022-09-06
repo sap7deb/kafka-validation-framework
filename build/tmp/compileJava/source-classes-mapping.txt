@@ -1,6 +1,0 @@
-avro/com/app/User.java
- com.app.User
- com.app.User$Builder
-avro/com/app/Movie.java
- com.app.Movie
- com.app.Movie$Builder
