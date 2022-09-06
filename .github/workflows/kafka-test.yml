@@ -32,7 +32,10 @@ jobs:
 
       - name: Run Tests
         run: ./gradlew kafkaTests
+        with:
+          name: Test-Reports
+          path: reports/cucumber-reports.html
 
       - name: Stop docker-compose
         if: always()
-        run: docker-compose down
+        run: ./gradlew composeDown
