@@ -2,6 +2,7 @@ package consumer;
 
 import com.app.Movie;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -12,6 +13,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
+@Slf4j
 public class KafkaMessageConsumer {
     public static void main(String[] args) throws IOException {
 
@@ -34,11 +36,11 @@ public class KafkaMessageConsumer {
         while (true) {
             ConsumerRecords<String, Movie> consumerRecord = consumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, Movie> record : consumerRecord) {
-                System.out.printf("offset = %d, key = %s, topic = %s, value = %s%n", record.offset(), record.key(), record.topic(), record.value());
+                log.info("offset = {}}, key = {}, topic = {}, value = {}", record.offset(), record.key(), record.topic(), record.value());
                 if(record!=null) {
                     Movie movie = record.value();
-                    System.out.println("Name====>" + movie.getMovieName());
-                    System.out.println("Genre ====>" + movie.getGenre());
+                    log.info("Name: {}", movie.getMovieName());
+                    log.info("Genre: {}", movie.getGenre());
                 }
             }
         }

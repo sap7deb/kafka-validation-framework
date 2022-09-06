@@ -2,11 +2,13 @@ package producer;
 
 import com.app.Movie;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import java.util.Properties;
 
+@Slf4j
 public class KafkaMessageProducer {
     static String bootstrapServer;
     static String schemaRegistry;
@@ -34,7 +36,7 @@ public class KafkaMessageProducer {
                 new ProducerRecord<String, Movie>(topic, 0, "00000", movie);
         kafkaProducer.send(producerRecord, (metadata, exception) -> {
             if (exception == null) {
-                System.out.println("-------SUCCESS------");
+                log.info("Message was produced and published to Kafka topic: {}", topic);
             } else {
                 exception.printStackTrace();
             }
