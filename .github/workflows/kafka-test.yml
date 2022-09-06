@@ -1,7 +1,7 @@
 name: Run Kafka Tests
 on: push
 jobs:
-  gradle:
+  build_and_test:
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -32,6 +32,9 @@ jobs:
 
       - name: Run Tests
         run: ./gradlew kafkaTests
+       
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
         with:
           name: Test-Reports
           path: reports/cucumber-reports.html
