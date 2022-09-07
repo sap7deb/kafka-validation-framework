@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Test-Reports
-          path: reports/cucumber-reports.html
+          path: test-output/spark/KafkaTest.html
 
       - name: Stop docker-compose
         if: always()
