@@ -11,6 +11,6 @@ This framework helps in validating Kafka messaging between microservices. This a
 
 3. Run the feature files
 
-## Find out more about thr framework here
+## Find out more about the framework here
 [Test Automation Framework for Validation of Kafka Messages with in Microservices](https://medium.com/@sap7deb/test-automation-framework-for-validation-of-kafka-messages-with-in-microservices-794506d47e18)
 
